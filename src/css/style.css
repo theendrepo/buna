@@ -573,7 +573,7 @@ main {
 }
 
 .hero {
-  background-image: url("../images/img14.jpg");
+  /* background-image: url("../images/img14.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 -570px;
