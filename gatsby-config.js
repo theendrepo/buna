@@ -35,7 +35,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: `http://buna.local/graphql`
+        url: `http://dashboard.bunabridals.com//graphql`
       },
       schema: {
         //Prefixes all WP Types with "Wp" so "Post and allPost" become "WpPost and allWpPost".
