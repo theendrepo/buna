@@ -35,8 +35,12 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: `http://dashboard.bunabridals.com/graphql`
-        
+        url: `http://dashboard.bunabridals.com/graphql`,
+        schema: {
+          perPage: 20, // currently set to 100
+          requestConcurrency: 5, // currently set to 15
+          previewRequestConcurrency: 2, // currently set to 5
+        }
       },
       schema: {
         //Prefixes all WP Types with "Wp" so "Post and allPost" become "WpPost and allWpPost".
