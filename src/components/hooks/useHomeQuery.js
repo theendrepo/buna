@@ -7,7 +7,16 @@ const useHomeQuery = () => {
         query{
             wpPage(databaseId: {eq: 8}) {
             id
-            
+            footer {
+                fieldGroupName
+                footerEmail 
+                footerSocials {
+                    facebook
+                    instagram
+                    linkedin
+                    twitter
+                  }
+            }
             projects {
                 projects {
                   category

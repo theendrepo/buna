@@ -35,7 +35,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: `http://dashboard.bunabridals.com/graphql`,
+        url: `http://buna.local/graphql`,
         schema: {
           perPage: 20, // currently set to 100
           requestConcurrency: 5, // currently set to 15
