@@ -3,10 +3,11 @@ import useHomeQuery from '../hooks/useHomeQuery'
 
 const Quote = () => {
     const homeData = useHomeQuery();
-    let quote = [];
+    let quote = '';
 
     if(homeData.wpPage.quote.quote) quote = homeData.wpPage.quote.quote;
-    if(quote.length == 0) return <></>;
+    if(!quote) return <></>;
+    
 
     return (
       <section class="quote container">
