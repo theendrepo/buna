@@ -19,7 +19,79 @@
   padding: 0 15px;
   position: relative;
 }
+main:not(.page-home) {
+  margin-top: 120px;
+}
+.gatsby-image-wrapper {
+  width: 100%;
+}
+.hero {
+  background-size: cover;
+  background-position: top !important;
+}
+.project img {
+  height: 550px;
+  object-position: bottom;
+}
+.projects-wrap .projects {
+  padding: 120px 0 90px;
+}
+.features-wrap .features {
+  display: flex;
+}
+.features .swiper-button-next {
+  padding-right: 10px;
+}
+.features .swiper-button-prev {
+  padding-left: 10px;
+}
+.features-wrap .features .feature {
+  height: 100%;
+}
+.features-wrap .swiper-pagination-bullets {
+  bottom: 0;
+}
+.features-wrap .swiper-button-next,
+.features-wrap .swiper-button-prev {
+  opacity: 0;
+  transition: all 0.3s;
+  transform: translateY(-50%);
+}
+.swiper-button-next,
+.swiper-button-prev {
+  transform: translateY(-50%);
+}
+.features-wrap:hover .swiper-button-next,
+.features-wrap:hover .swiper-button-prev {
+  opacity: 1;
+}
+.overflow-h {
+  overflow: hidden !important;
+}
+.swiper-desktop {
+  padding: 0 15px;
+}
+.projects .swiper-button-next {
+  right: 20px;
+}
+.projects .swiper-button-prev {
+  left: 20px;
+}
 @media screen and (max-width: 767px) {
+  .projects-wrap .projects {
+    padding: 90px 0 90px;
+  }
+  .swiper .swiper-slide:nth-child(2n) .project {
+    margin-top: 0;
+  }
+  .features-wrap .features {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .hero {
+    background-size: cover;
+    background-position: right !important;
+  }
   .collection__item img {
     object-position: 0;
   }
@@ -27,18 +99,16 @@
     font-size: 14px;
   }
   .hero__title {
-    font-size: 38px;
+    font-size: 32px;
   }
   .swiper-mobile {
     display: block;
   }
   .swiper-button-next {
-    top: 40%;
     padding-right: 10px;
   }
   .swiper-button-prev {
-    top: 40%;
-    padding-left: 10px;
+    padding-left: 0px;
   }
   .swiper-button-next:after {
     font-size: 28px;
@@ -56,7 +126,27 @@
     height: 400px;
     object-fit: cover;
   }
-  .swiper-desktop {
+  /* .swiper-desktop {
     display: none;
+  } */
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .hero__title {
+    font-size: 70px;
+  }
+  .features {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+  .about-us-wrap .about-us__image img {
+    height: 100% !important;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .hero__title {
+    font-size: 70px;
+  }
+  .about-us-wrap .about-us__image img {
+    height: 100% !important;
   }
 }

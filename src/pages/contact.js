@@ -41,7 +41,6 @@ const Contact = () => {
     <ApolloProvider client={client}>
       <Layout>
         <Seo title="Contact" />
-        <PageHeader title={contactData.wpPage.title}/>
         <ContactInfo contactInfo={contactInfo} />
         <ContactForm />
       </Layout>

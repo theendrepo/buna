@@ -42,7 +42,6 @@ const Collection = () => {
   return(
 <Layout>
     <Seo title="Collection" />
-    <PageHeader title={collectionData.wpPage.title}/>
     <section className="collection-wrap">
         <div className="container">
           <CollectionFilter 

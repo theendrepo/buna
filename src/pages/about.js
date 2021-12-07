@@ -28,9 +28,8 @@ const About = () => {
     return(
         <Layout>
             <Seo title={aboutData.title} />
-            <PageHeader title={aboutData.title}/>
             <AboutUsContent featuredImg={aboutData.featuredImage.node.localFile} subTitle={aboutData.about.aboutUsSubtitle} content={aboutData.content}/>
-            <AboutUsTeam team={aboutData.about.ourTeam}/>
+            {/* <AboutUsTeam team={aboutData.about.ourTeam}/> */}
         </Layout>
     )
 }

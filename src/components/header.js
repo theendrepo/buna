@@ -4,13 +4,16 @@ import { Link } from "gatsby"
 import useMenuQuery from "../components/hooks/useMenuQuery";
 import Logo from '../images/buna.svg'
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, handleMobNav, navActive }) => {
   const menuData = useMenuQuery();
   const menuItems = menuData.wpMenu.menuItems.nodes;
 
-  const [navActive, setNavActive] = useState(false);
-  const handleMobNav = () => {
-    setNavActive( (prevState) => !prevState );
+  const body = document.querySelector('body'); 
+  if(navActive){
+    body.classList.add('overflow-h');
+  }
+  else if(body.classList.contains('overflow-h') && !navActive){
+    body.classList.remove('overflow-h');
   }
 
   return(

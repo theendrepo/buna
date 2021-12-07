@@ -5,7 +5,6 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import {Navigation, Pagination, A11y} from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -22,16 +21,28 @@ const Projects = () => {
         <section className="projects-wrap">
           {projects && 
             <div className="projects">
-              <h2 className="gray-title">Projects</h2>
-              <div className="" style={{marginTop:'150px'}} >
+              {/* <h2 className="gray-title">Projects</h2> */}
               <Swiper className="swiper-desktop"
                 modules={[Navigation, Pagination, A11y]}
                 spaceBetween={50}
                 slidesPerView={4}
                 navigation
                 pagination={{ clickable: true }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')} >
+                breakpoints={{
+                  300: {
+                    slidesPerView: 1
+                  },
+                  768: {
+                    slidesPerView: 2
+                  },
+                  992:{
+                    slidesPerView: 3
+                  },
+                  1200: {
+                    slidesPerView:4
+                  }
+                }}
+                onSwiper={(swiper) => console.log(swiper)}>
                     {projects.map((project)=>
                       <SwiperSlide>
                         <div className="project">
@@ -47,27 +58,6 @@ const Projects = () => {
                       </SwiperSlide>
                     )}
               </Swiper>
-              <Swiper className="swiper-mobile"
-                modules={[Navigation, Pagination, A11y]}
-                spaceBetween={50}
-                slidesPerView={1}
-                navigation
-                pagination={{ clickable: true }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')} >
-                    {projects.map((project)=>
-                      <SwiperSlide>
-                        <div className="project">
-                          <div className="project__image">
-                            <GatsbyImage image={getImage(project.image.localFile)} alt={project.title} />
-                          </div>
-                          <div className="project__title title-lg">{project.title}</div>
-                          <div className="project__category">{project.category}</div>
-                        </div>
-                      </SwiperSlide>
-                    )}
-              </Swiper>
-              </div>
               <div className="projects__btn flex-j-c">
                 <Link
                   to="/collection"

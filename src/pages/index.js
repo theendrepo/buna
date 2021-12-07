@@ -14,7 +14,7 @@ import Projects from "../components/Projects/Projects"
 const IndexPage = () => {
 
   return(
-    <Layout>
+    <Layout classes={"page-home"}>
       <Seo title="Home" />
       <Hero />
       <Features />
