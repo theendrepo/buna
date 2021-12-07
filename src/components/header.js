@@ -8,13 +8,13 @@ const Header = ({ siteTitle, handleMobNav, navActive }) => {
   const menuData = useMenuQuery();
   const menuItems = menuData.wpMenu.menuItems.nodes;
 
-  const body = document.querySelector('body'); 
-  if(navActive){
-    body.classList.add('overflow-h');
-  }
-  else if(body.classList.contains('overflow-h') && !navActive){
-    body.classList.remove('overflow-h');
-  }
+  // const body = document.querySelector('body'); 
+  // if(navActive){
+  //   body.classList.add('overflow-h');
+  // }
+  // else if(body.classList.contains('overflow-h') && !navActive){
+  //   body.classList.remove('overflow-h');
+  // }
 
   return(
     <header>
