@@ -8,10 +8,11 @@ const Quote = () => {
     if(homeData.wpPage.quote.quote){
       quote = homeData.wpPage.quote.quote;
     } 
+    console.log("quote",quote);
+
     // if(!quote) return <></>;
     return (
-      <section class="quote container">
-        <p dangerouslySetInnerHTML={{ __html: quote }}></p>
+      <section className="quote container" dangerouslySetInnerHTML={{ __html:quote}}>
       </section>
     )
 }
