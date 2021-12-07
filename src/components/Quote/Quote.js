@@ -5,15 +5,13 @@ const Quote = () => {
     const homeData = useHomeQuery();
     let quote = '';
 
-    if(homeData.wpPage.quote.quote) quote = homeData.wpPage.quote.quote;
-    if(!quote) return <></>;
-    
-
+    if(homeData.wpPage.quote.quote){
+      quote = homeData.wpPage.quote.quote;
+    } 
+    // if(!quote) return <></>;
     return (
       <section class="quote container">
-      { quote && 
-          <p dangerouslySetInnerHTML={{ __html: quote }}></p>
-      }
+        <p dangerouslySetInnerHTML={{ __html: quote }}></p>
       </section>
     )
 }
