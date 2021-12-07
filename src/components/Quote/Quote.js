@@ -6,7 +6,7 @@ const Quote = () => {
     let quote = [];
 
     if(homeData.wpPage.quote.quote) quote = homeData.wpPage.quote.quote;
-    if(!quote.length) return <></>;
+    if(quote.length == 0) return <></>;
 
     return (
       <section class="quote container">
