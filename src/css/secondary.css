@@ -6,7 +6,7 @@
   padding-bottom: 50px;
 }
 .swiper .swiper-slide:nth-child(2n) .project {
-  margin-top: 50px;
+  margin-top: 0px !important;
 }
 .swiper-pagination-bullet {
   background: gray;
