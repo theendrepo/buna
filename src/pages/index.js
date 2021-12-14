@@ -17,10 +17,10 @@ const IndexPage = () => {
     <Layout classes={"page-home"}>
       <Seo title="Home" />
       <Hero />
-      <Features />
-      <Quote />
-      <About />
-      <Projects />
+      {/* <Features /> */}
+      {/* <Quote /> */}
+      {/* <About /> */}
+      {/* <Projects /> */}
     </Layout>
   );
 }

@@ -59,6 +59,22 @@ const useHomeQuery = () => {
                 }
             }
             hero {
+                heroSlider {
+                    buttonLink
+                    buttonTitle
+                    description
+                    imagePosition
+                    imagePositionMobileX
+                    imagePositionMobileY
+                    title
+                    image {
+                      localFile {
+                        childImageSharp {
+                            gatsbyImageData
+                        }
+                      }
+                    }
+                }
                 fieldGroupName
                 heroButtonLink
                 heroButtonTitle
@@ -70,6 +86,7 @@ const useHomeQuery = () => {
                     gatsbyImageData
                     }
                 }
+                
                 }
             }
             }
