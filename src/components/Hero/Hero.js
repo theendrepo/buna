@@ -16,17 +16,11 @@ import '../../css/secondary.css'
 const Hero = () => {
     let heroData = useHomeQuery();
     let heroSlider = heroData.wpPage.hero.heroSlider;
-    console.log("heroData", heroSlider);
-
-    
     let hero = [];
-    if(heroData.wpPage.hero){
-        hero = heroData.wpPage.hero;
+    if(heroData.wpPage.hero.heroSlider){
+        hero = heroData.wpPage.heroSlider;
     }
-    if(hero.length <= 0) return <></>;
-
-    // const heroImg = getImage(hero.heroImage.localFile);
-    // console.log("heroitem", getImage(heroSlider[0].image.localFile));
+    if(hero) return <></>;
     
     return (
         <section className="hero-slider">

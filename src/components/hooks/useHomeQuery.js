@@ -75,19 +75,6 @@ const useHomeQuery = () => {
                       }
                     }
                 }
-                fieldGroupName
-                heroButtonLink
-                heroButtonTitle
-                heroDescription
-                heroTitle
-                heroImage {
-                localFile {
-                    childImageSharp {
-                    gatsbyImageData
-                    }
-                }
-                
-                }
             }
             }
         }
