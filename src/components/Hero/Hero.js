@@ -25,7 +25,7 @@ const Hero = () => {
     }
     if(hero.length <= 0) return <></>;
 
-    const heroImg = getImage(hero.heroImage.localFile);
+    // const heroImg = getImage(hero.heroImage.localFile);
     // console.log("heroitem", getImage(heroSlider[0].image.localFile));
     
     return (
@@ -37,28 +37,30 @@ const Hero = () => {
                 pagination={{ "clickable": true }} >
                 
                 {heroSlider.map((hero)=>{
-                    let heroImg= getImage(hero.image.localFile);
-                    let heroImagePosition = hero.imagePosition;
-                    let heroImagePositionMobileX = hero.imagePositionMobileX;
-                    let heroImagePositionMobileY = hero.imagePositionMobileY;
-                    return(
-                    <SwiperSlide className={"hero" + " hero-"+heroImagePosition + " hero-horz-"+heroImagePositionMobileX + " hero-vert-"+heroImagePositionMobileY } 
-                    style={{ backgroundImage: "url(" + heroImg.images.fallback.src + ")", }}>
-                        <div className="container">
-                            { hero.title &&
-                            <div className="hero__title">
-                                <h1>{hero.title}</h1>
-                            </div> }
-                            { hero.description &&
-                            <div className="hero__desc">
-                                <p>{hero.description}</p>
-                            </div> }
-                            { hero.buttonTitle &&
-                            <div className="hero__button">
-                                <Link to={hero.buttonLink} className="button button--pink">{hero.buttonTitle}</Link>
-                            </div> }
-                        </div>
-                    </SwiperSlide>)
+                    if(hero.image){
+                        let heroImg= getImage(hero.image.localFile);
+                        let heroImagePosition = hero.imagePosition;
+                        let heroImagePositionMobileX = hero.imagePositionMobileX;
+                        let heroImagePositionMobileY = hero.imagePositionMobileY;
+                        return(
+                        <SwiperSlide className={"hero" + " hero-"+heroImagePosition + " hero-horz-"+heroImagePositionMobileX + " hero-vert-"+heroImagePositionMobileY } 
+                        style={{ backgroundImage: "url(" + heroImg.images.fallback.src + ")", }}>
+                            <div className="container">
+                                { hero.title &&
+                                <div className="hero__title">
+                                    <h1>{hero.title}</h1>
+                                </div> }
+                                { hero.description &&
+                                <div className="hero__desc">
+                                    <p>{hero.description}</p>
+                                </div> }
+                                { hero.buttonTitle &&
+                                <div className="hero__button">
+                                    <Link to={hero.buttonLink} className="button button--pink">{hero.buttonTitle}</Link>
+                                </div> }
+                            </div>
+                        </SwiperSlide>)
+                    }
                 })}
             </Swiper>
         </section>
