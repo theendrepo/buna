@@ -12,16 +12,16 @@ const AboutUsContent = ({subTitle, content, featuredImg}) => {
                     {featuredImg &&
                         <GatsbyImage  image={getImage(featuredImg)} alt={subTitle} />
                     }
-                    {!featuredImg && 
-                        <img src={placeholderImg} />
-                    }
                 </div>
-                <div className="heading-section">
-                    <h2 className="title-xl">{subTitle}</h2>
-                </div>
-                <div className="about__content" dangerouslySetInnerHTML={{ __html:content}} >
-                    
-                </div>
+                {subTitle &&
+                    <div className="heading-section">
+                        <h2 className="title-xl">{subTitle}</h2>
+                    </div>
+                }
+                {content && 
+                    <div className="about__content" dangerouslySetInnerHTML={{ __html:content}} >
+                    </div>
+                }
             </div>
         </section>
     )

@@ -29,13 +29,12 @@ const Contact = () => {
     contactInfo = contactData.wpPage.contact.contactInfo;
   }
   if(contactInfo.length <= 0){
-    return (
-        <Layout>
-            <PageHeader title={"No content here"}/>
-        </Layout>
-    )   
-}
-
+      return (
+          <Layout>
+              <PageHeader title={"No content here"}/>
+          </Layout>
+      )   
+  }
 
   return (
     <ApolloProvider client={client}>

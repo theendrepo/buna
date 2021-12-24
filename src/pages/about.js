@@ -15,10 +15,11 @@ const About = () => {
 
     if(aboutQuery.wpPage){
         aboutData = aboutQuery.wpPage;
+        var featuredImage = aboutData.featuredImage ? aboutData.featuredImage.node.localFile : false;
+        var subTitle = aboutData.about.aboutUsSubtitle ? aboutData.about.aboutUsSubtitle : '';
+
     }
     if( aboutData.length <= 0){
-        var featuredImage = aboutData.featuredImage ? aboutData.featuredImage.node.localFile : false;
-
         return (
             <Layout>
                 <Seo title={aboutData.title} />
@@ -30,7 +31,7 @@ const About = () => {
     return(
         <Layout>
             <Seo title={aboutData.title} />
-            <AboutUsContent featuredImg={featuredImage} subTitle={aboutData.about.aboutUsSubtitle} content={aboutData.content}/>
+            <AboutUsContent featuredImg={featuredImage} subTitle={subTitle} content={aboutData.content}/>
             {/* <AboutUsTeam team={aboutData.about.ourTeam}/> */}
         </Layout>
     )

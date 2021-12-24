@@ -10,12 +10,18 @@ const ContactInfo = ({contactInfo}) => {
                 {contactInfo.map((item)=>
                     <div className="contact-info__item">
                         <div className="contact-info__icon">
-                        <GatsbyImage image={getImage(item.icon.localFile)} alt={item.title}/>
+                        {item.icon &&
+                            <GatsbyImage image={getImage(item.icon.localFile)} alt={item.title}/>
+                        }
                         </div>
-                        <div className="contact-info__title title-lg">{item.title}</div>
-                        <div className="contact-info__content">
-                            <p dangerouslySetInnerHTML={{__html:item.content}}></p>
-                        </div>
+                        {item.title && 
+                            <div className="contact-info__title title-lg">{item.title}</div>
+                        }
+                        {item.content &&
+                            <div className="contact-info__content">
+                                <p dangerouslySetInnerHTML={{__html:item.content}}></p>
+                            </div>
+                        }
                     </div>
                 )}
             </div>
