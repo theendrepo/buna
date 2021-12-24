@@ -37,23 +37,21 @@ const Collection = () => {
     }
     return collection.node.collectionCategory.nodes.find( ({name}) => name == categoryFilter );
   }
-  console.log("collectionData", collectionData);
-  console.log("collectionState", typeof(categoryFilter) );
   return(
-<Layout>
-    <Seo title="Collection" />
-    <section className="collection-wrap">
-        <div className="container">
-          <CollectionFilter 
-          collectionCategories={collectionData.allWpCollectionCategory.nodes} 
-          categoryFilter={categoryFilter} 
-          handleCategoryFilter={handleCategoryFilter} />
-          <CollectionItem 
-            collections={collections}
-            filterCollection={filterCollection} />
-        </div>
-      </section>
-  </Layout>
+    <Layout>
+      <Seo title="Collection" />
+        <section className="collection-wrap">
+          <div className="container">
+            <CollectionFilter 
+            collectionCategories={collectionData.allWpCollectionCategory.nodes} 
+            categoryFilter={categoryFilter} 
+            handleCategoryFilter={handleCategoryFilter} />
+            <CollectionItem 
+              collections={collections}
+              filterCollection={filterCollection} />
+          </div>
+        </section>
+    </Layout>
   )
 }
 

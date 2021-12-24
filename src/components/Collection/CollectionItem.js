@@ -8,21 +8,29 @@ const CollectionItem = ({ filteredCollection, collections, filterCollection }) =
               filteredCollection => (
                 <div className="collection__item">
                   {/* <img src={filteredCollection.node.featuredImage.node.localFile.url} /> */}
-                  <GatsbyImage image={getImage(filteredCollection.node.featuredImage.node.localFile)} 
-                  alt={filteredCollection.node.title}/> 
-                  <div className="collection__title">
-                    <h4 className="title-lg">{filteredCollection.node.title}</h4>
-                  </div>
-                  <div className="collection__description">
-                    <p dangerouslySetInnerHTML={{__html:filteredCollection.node.content}}></p>
-                  </div>
-                  <div className="collection__category">
-                    {filteredCollection.node.collectionCategory.nodes &&
-                    filteredCollection.node.collectionCategory.nodes.map((category, index) =>{
-                      return index === 0 ? 
-                      category.name : ' / ' + category.name
-                    })}
+                  {filteredCollection.node.featuredImage && 
+                    <GatsbyImage image={getImage(filteredCollection.node.featuredImage.node.localFile)} 
+                    alt={filteredCollection.node.title}/> 
+                  }
+                  {filteredCollection.node.title && 
+                    <div className="collection__title">
+                      <h4 className="title-lg">{filteredCollection.node.title}</h4>
                     </div>
+                  }
+                  {filteredCollection.node.content && 
+                    <div className="collection__description">
+                      <p dangerouslySetInnerHTML={{__html:filteredCollection.node.content}}></p>
+                    </div>
+                  }
+                  {filteredCollection.node.collectionCategory.nodes && 
+                    <div className="collection__category">
+                      {filteredCollection.node.collectionCategory.nodes &&
+                      filteredCollection.node.collectionCategory.nodes.map((category, index) =>{
+                        return index === 0 ? 
+                        category.name : ' / ' + category.name
+                      })}
+                    </div>
+                  }
                 </div>
               )
             )}
