@@ -107,6 +107,10 @@ header {
 .brides-stories-page .collection__item img {
   object-position: bottom;
 }
+.about__image {
+  max-height: 800px;
+  position: relative;
+}
 
 @media screen and (max-width: 767px) {
   .brides-stories-page {
